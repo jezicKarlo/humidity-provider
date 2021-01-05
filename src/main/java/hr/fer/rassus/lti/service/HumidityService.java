@@ -3,6 +3,8 @@ package hr.fer.rassus.lti.service;
 import hr.fer.rassus.lti.repository.HumidityRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalTime;
+
 @Service
 public class HumidityService {
 
