@@ -1,7 +1,13 @@
 package hr.fer.rassus.lti;
 
+import hr.fer.rassus.lti.models.Humidity;
 import hr.fer.rassus.lti.repository.HumidityRepository;
+import hr.fer.rassus.lti.util.HumidityLoader;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class HumidityProviderApplication {
@@ -16,6 +22,6 @@ public class HumidityProviderApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(HumidityMicroserviceApplication.class, args);
+        SpringApplication.run(HumidityProviderApplication.class, args);
     }
 }
