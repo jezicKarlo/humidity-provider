@@ -1,9 +1,6 @@
-package hr.fer.rassus.lti.humiditymicroservice.controller;
+package hr.fer.rassus.lti.controller;
 
-import com.lti.humiditymicroservice.response.Response;
-import com.lti.humiditymicroservice.service.HumidityService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import hr.fer.rassus.lti.service.HumidityService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
