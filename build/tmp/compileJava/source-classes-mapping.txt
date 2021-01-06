@@ -1,16 +1,16 @@
-hr/fer/rassus/lti/response/Response.java
- hr.fer.rassus.lti.response.Response
+hr/fer/rassus/lti/models/Humidity.java
+ hr.fer.rassus.lti.models.Humidity
 hr/fer/rassus/lti/util/HumidityHolder.java
  hr.fer.rassus.lti.util.HumidityHolder
-hr/fer/rassus/lti/controller/Entrypoint.java
- hr.fer.rassus.lti.controller.Entrypoint
+hr/fer/rassus/lti/repository/HumidityRepository.java
+ hr.fer.rassus.lti.repository.HumidityRepository
 hr/fer/rassus/lti/util/HumidityLoader.java
  hr.fer.rassus.lti.util.HumidityLoader
 hr/fer/rassus/lti/service/HumidityService.java
  hr.fer.rassus.lti.service.HumidityService
 hr/fer/rassus/lti/HumidityProviderApplication.java
  hr.fer.rassus.lti.HumidityProviderApplication
-hr/fer/rassus/lti/repository/HumidityRepository.java
- hr.fer.rassus.lti.repository.HumidityRepository
-hr/fer/rassus/lti/models/Humidity.java
- hr.fer.rassus.lti.models.Humidity
+hr/fer/rassus/lti/response/Response.java
+ hr.fer.rassus.lti.response.Response
+hr/fer/rassus/lti/controller/Entrypoint.java
+ hr.fer.rassus.lti.controller.Entrypoint
