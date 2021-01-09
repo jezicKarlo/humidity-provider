@@ -1,23 +1,18 @@
 package hr.fer.rassus.lti.service;
 
 import hr.fer.rassus.lti.repository.HumidityRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 
 @Service
+@AllArgsConstructor
 public class HumidityService {
-
     private final HumidityRepository repository;
 
-    public HumidityService(HumidityRepository repository) {
-        this.repository = repository;
-    }
-
     public Integer getHumidity() {
-        int id = generateId();
-        return repository.findAll().get(id).getHumidity();
-        //return repository.getById(id).getHumidity();
+        return repository.findAll().get(generateId()).getHumidity();
     }
 
     private int generateId() {

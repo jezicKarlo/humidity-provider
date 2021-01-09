@@ -15,23 +15,14 @@ import java.util.stream.Collectors;
 
 @Slf4j
 public class HumidityLoader {
-
     private static final String PATH = "/measurements.csv";
-
     private List<Integer> humidities;
 
     public void load() {
-        List<HumidityHolder> temperatureHolders;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(PATH)))) {
-            CsvToBean<HumidityHolder> csvReader = new CsvToBeanBuilder<HumidityHolder>(reader)
-                    .withType(HumidityHolder.class)
-                    .withSeparator(',')
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .withIgnoreEmptyLine(true)
-                    .withMappingStrategy(makeMappingStrategy())
-                    .build();
-            temperatureHolders = csvReader.parse();
-            humidities = temperatureHolders.stream()
+            humidities = csvToBean(reader)
+                    .parse()
+                    .stream()
                     .map(HumidityHolder::getHumidity)
                     .collect(Collectors.toList());
         } catch (IOException e) {
@@ -41,6 +32,16 @@ public class HumidityLoader {
 
     public List<Integer> getHumidities() {
         return humidities;
+    }
+
+    private CsvToBean<HumidityHolder> csvToBean(BufferedReader reader) {
+        return new CsvToBeanBuilder<HumidityHolder>(reader)
+                .withType(HumidityHolder.class)
+                .withSeparator(',')
+                .withIgnoreLeadingWhiteSpace(true)
+                .withIgnoreEmptyLine(true)
+                .withMappingStrategy(makeMappingStrategy())
+                .build();
     }
 
     private HeaderColumnNameTranslateMappingStrategy<HumidityHolder> makeMappingStrategy() {
